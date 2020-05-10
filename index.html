@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Source+Code+Pro:wght@500&family=Volkhov&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Price Calculator</title>
+</head>
+<body>
+    <div class="app">
+    <div class="showcase">
+        <div class="bg-img"></div>
+    <div class="showcaseText">
+    <h1>CALCULATE ESTIMATED COST</h1>
+    <p1>Fill the  details  below.</p1>
+    </div>
+    </div>
+    <section class="inputElements">
+        <div class="inpGoldPrice">
+            <h3>Enter Today's gold price</h3>
+            <input class="goldPrice" id="emptyChecka" type="text" placeholder="Gold Price" require/>
+        </div>
+        <div>
+            <h3>Enter the total weight</h3>
+            <input class="totalWeight emptyCheck" type="text" placeholder="Weight in grams" required>
+        </div>
+        <div>
+            <h3>Enter deductions(g)</h3>
+            <input class="deductions emptyCheck" type="text" placeholder="Deductions if any in grams">     
+        </div>
+        <div>
+            <h3>Enter deductions cost</h3>
+            <input class="costOfDeductions emptyCheck" type="text" placeholder="Cost of deduction in ₹">
+        </div>
+        <div>
+            <h3>Enter Wastage</h3>
+            <input class="wastage emptyCheck" type="text" placeholder="Wastage in %">
+        </div>
+        <div>
+            <h3>Enter Making Charges</h3>
+            <input class="makingCharges emptyCheck" type="text" placeholder="Making Charges in ₹">
+        </div>
+    
+        <div >
+            <h3>Other Charges(if any)</h3>
+            <input class="otherCharges emptyCheck" type="text" placeholder="Additional charges in ₹"></li>
+        </div>
+    </section>
+        <div class="btn">
+            <input class="submitBtn" type="submit" value="SUBMIT">
+        </div>
+    
+    
+    
+    <!-- To be hidden initially-->
+    <div id="result">
+    <p>Today's gold cost/gram = <span id="resGoldPrice"></span></p>
+    <p>Net weight of gold = <span id="resNetWeight"></span> </p>
+    <p>Making Charges = <span id="resMakingCharges"></span> </p>
+    <p>Wastage = <span id="resWastage"></span> </p>
+    <p>Deductions = <span id="resDeduction"></span></p>
+    <p >Cost of deducted item = <span id="resDeductionAmt"></span></p>
+    <p>Other Charges = <span id="resOtherCharges"></span></p>
+    <p><b>Amount to be paid = <span id="resTotalAmt"></span></b></p>
+    </div>
+</div>
+</body>
+<script src="app.js"></script>
+</html>
