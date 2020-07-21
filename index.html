@@ -21,11 +21,11 @@
         <div class="grid">
         <div>  <!-- class="inpGoldPrice" -->
             <h3>Enter Today's gold price</h3>
-            <input class="goldPrice"  type="number" placeholder="Gold Price" required/>
+            <input class="goldPrice"  type="number" step="0.01" min="0" max="10" placeholder="Gold Price" required/>
         </div>
         <div>
             <h3>Enter the total weight</h3>
-            <input class="totalWeight emptyCheck" type="text" pattern="\d*" placeholder="Weight in grams" required>
+            <input class="totalWeight emptyCheck" type="number" pattern="\d*" placeholder="Weight in grams" required>
         </div>
         <div>
             <h3>Enter deductions(g)</h3>
