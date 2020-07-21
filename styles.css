@@ -1,7 +1,7 @@
 html{
     padding-top: 0;
     margin-top: 0;
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 body{
     background-color: #c1a57b;
@@ -9,7 +9,7 @@ body{
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: scroll;   
+    overflow-x: hidden;   
 }
 
 
@@ -27,9 +27,7 @@ p1{
 p{
     font-family: 'Source Code Pro', monospace ; 
 }
-li{
-    list-style: none;
-}
+
 input{
     height: 30px;
 }
@@ -52,7 +50,6 @@ input{
 }
 .showcaseText{
     padding-top: 60px;
-   
 }
 .inputElements{
     margin-left: 20px;
@@ -75,6 +72,42 @@ input{
     display: none;
     margin-top: 20px;
     margin-left: 10px;
+}
+
+#loader{
+    display: none;
+    padding-top: 59px;
+   text-align: center;
+}
+
+.error{
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb
+}
+
+
+@media(min-width:700px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 30px;
+        column-gap: 100px;
+    }
+
+    .submitBtn{
+        background-color: #980c04;
+        color:#fff;
+        margin:25px 20px 10px;
+        min-width: 10%;
+        max-width: auto;
+        height:40px;
+    }
 }
 
 
