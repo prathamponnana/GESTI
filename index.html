@@ -21,19 +21,19 @@
         <div class="grid">
         <div>  <!-- class="inpGoldPrice" -->
             <h3>Enter Today's gold price</h3>
-            <input class="goldPrice"  type="number" step="0.01" placeholder="Gold Price" required/>
+            <input class="goldPrice"  type="number" step="0.01" min="0" max="10" placeholder="Gold Price" required/>
         </div>
         <div>
             <h3>Enter the total weight</h3>
-            <input class="totalWeight emptyCheck" type="number" step="0.01" pattern="\d*" placeholder="Weight in grams" required>
+            <input class="totalWeight emptyCheck" type="number" step="0.01" min="0" max="10" pattern="\d*" placeholder="Weight in grams" required>
         </div>
         <div>
             <h3>Enter deductions(g)</h3>
-            <input class="deductions emptyCheck"  type="number" step="0.01" placeholder="Deductions if any in grams" required>     
+            <input class="deductions emptyCheck"  type="number" step="0.01" min="0" max="10" placeholder="Deductions if any in grams" required>     
         </div>
         <div>
             <h3>Enter deductions cost</h3>
-            <input class="costOfDeductions emptyCheck" type="number" step="0.01" placeholder="Cost of deduction in ₹" required>
+            <input class="costOfDeductions emptyCheck" type="number" step="0.01" min="0" max="10" placeholder="Cost of deduction in ₹" required>
         </div>
         <div>
             <h3>Enter Wastage</h3>
