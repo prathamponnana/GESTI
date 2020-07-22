@@ -29,7 +29,7 @@ p{
 }
 
 input{
-    height: 50px;
+    height: 30px;
 }
 .showcase{
     min-height: 160px;
@@ -99,6 +99,10 @@ input{
         row-gap: 30px;
         column-gap: 100px;
     }
+    
+    input{
+    height: 40px;
+}
 
     .submitBtn{
         background-color: #980c04;
