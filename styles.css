@@ -61,6 +61,7 @@ input{
     min-width: 25%;
     max-width: auto;
     height:40px;
+    border: 0;
 }
 
 .submitBtn:hover{
@@ -97,13 +98,8 @@ input{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 30px;
-        column-gap: 100px;
     }
     
-    input{
-    height: 40px;
-}
-
     .submitBtn{
         background-color: #980c04;
         color:#fff;
@@ -111,6 +107,7 @@ input{
         min-width: 10%;
         max-width: auto;
         height:40px;
+        border: 0;
     }
 }
 
