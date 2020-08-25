@@ -15,6 +15,7 @@ body{
 
 h1{
     font-size: 22px;
+    font-weight: 500;
     font-family: 'Volkhov', serif;
     color: 	#FAFAD2;
     margin: 0;
@@ -54,6 +55,18 @@ input{
 .inputElements{
     margin-left: 20px;
 }
+input{
+    border-radius:  5px;
+    border-width: 0;
+}
+
+hr {
+    border: dotted #16213e 3px;
+    border-bottom: none;
+    width: 5%;
+    margin: 40px auto;
+  }
+
 .submitBtn{
     background-color: #980c04;
     color:#fff;
@@ -62,6 +75,7 @@ input{
     max-width: auto;
     height:40px;
     border: 0;
+    border-radius: 10px;
 }
 
 .submitBtn:hover{
@@ -98,8 +112,9 @@ input{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 30px;
+        column-gap: 100px;
     }
-    
+
     .submitBtn{
         background-color: #980c04;
         color:#fff;
@@ -107,7 +122,6 @@ input{
         min-width: 10%;
         max-width: auto;
         height:40px;
-        border: 0;
     }
 }
 
