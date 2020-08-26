@@ -23,6 +23,7 @@ finExcGoldPrice = document.getElementById("resExcGoldPrice");
 finExcGoldWeight = document.getElementById("resExcGoldWeight");
 finExcGoldWorth = document.getElementById("resExcGoldWorth");
 finTotalAmt = document.getElementById("resTotalAmt");
+finTotalAmtWithTax = document.getElementById("resTotalAmtWithTax");
 finResult = document.getElementById("result");
 
 document.querySelector("form").addEventListener("submit", function (e) {
@@ -45,11 +46,12 @@ function calculateResults() {
  
   const netWeight = parseFloat(totalWeight).toFixed(3);
   poun = parseFloat(netWeight / 7.988).toFixed(3);
-  cost = netWeight * currentPrice;
+  cost = netWeight * currentPrice; 
   costWithWastage = cost + cost * (wastage / 100.0);
   finCost = parseFloat(costWithWastage) + parseInt(deductionAmt) + parseInt(makingCharges) + parseInt(otherCharges);
-  excCost = (excPrice * excWeight).toFixed(3);
+  excCost = excPrice * excWeight;
   totalCost = parseFloat(finCost).toFixed(3) - parseFloat(excCost).toFixed(3);
+  totalCostWithTax = totalCost +  cost*(3/100);
 
   if (isNaN(totalCost) === true) {
     showError("Please Enter Correct Inputs");
@@ -66,6 +68,7 @@ function calculateResults() {
     finExcGoldWeight.appendChild(document.createTextNode(`${excWeight}gms`));
     finExcGoldWorth.appendChild(document.createTextNode(`₹${excCost}`));
     finTotalAmt.appendChild(document.createTextNode(`₹${totalCost} only`));
+    finTotalAmtWithTax.appendChild(document.createTextNode(`₹${totalCostWithTax} only`));
     showResults();
   }
 }
@@ -77,6 +80,9 @@ function showResults() {
   //Hide Inputs
   document.querySelector("section").style.display = "none";
   // document.querySelector('#loader').style.display= 'none';
+  if(excCost===0){
+    document.querySelector(".dispExchangeInfo").style.display = 'none';
+  }
   // Insert Before
   form.insertBefore(finResult, btn);
   //Change Button
