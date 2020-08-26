@@ -48,7 +48,7 @@ function calculateResults() {
   cost = netWeight * currentPrice;
   costWithWastage = cost + cost * (wastage / 100.0);
   finCost = parseFloat(costWithWastage) + parseInt(deductionAmt) + parseInt(makingCharges) + parseInt(otherCharges);
-  excCost = excPrice * excWeight;
+  excCost = (excPrice * excWeight).toFixed(3);
   totalCost = parseFloat(finCost).toFixed(3) - parseFloat(excCost).toFixed(3);
 
   if (isNaN(totalCost) === true) {
