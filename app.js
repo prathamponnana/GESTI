@@ -23,6 +23,7 @@ finExcGoldPrice = document.getElementById("resExcGoldPrice");
 finExcGoldWeight = document.getElementById("resExcGoldWeight");
 finExcGoldWorth = document.getElementById("resExcGoldWorth");
 finTotalAmt = document.getElementById("resTotalAmt");
+finTaxAmt = document.getElementById("resTaxAmt");
 finTotalAmtWithTax = document.getElementById("resTotalAmtWithTax");
 finResult = document.getElementById("result");
 
@@ -46,12 +47,14 @@ function calculateResults() {
  
   const netWeight = parseFloat(totalWeight).toFixed(3);
   poun = parseFloat(netWeight / 7.988).toFixed(3);
-  cost = netWeight * currentPrice; 
+  cost = netWeight * currentPrice;
+  taxAmt = (cost *3)/100;
   costWithWastage = cost + cost * (wastage / 100.0);
   finCost = parseFloat(costWithWastage) + parseInt(deductionAmt) + parseInt(makingCharges) + parseInt(otherCharges);
   excCost = excPrice * excWeight;
-  totalCost = parseFloat(finCost).toFixed(3) - parseFloat(excCost).toFixed(3);
-  totalCostWithTax = totalCost +  cost*(3/100);
+  totalCost = parseFloat(finCost).toFixed(3);
+  totalCostAfterExc = parseFloat(finCost).toFixed(3) - parseFloat(excCost).toFixed(3);
+  totalCostWithTax = totalCostAfterExc +  cost*(3/100);
 
   if (isNaN(totalCost) === true) {
     showError("Please Enter Correct Inputs");
@@ -68,6 +71,7 @@ function calculateResults() {
     finExcGoldWeight.appendChild(document.createTextNode(`${excWeight}gms`));
     finExcGoldWorth.appendChild(document.createTextNode(`₹${excCost}`));
     finTotalAmt.appendChild(document.createTextNode(`₹${totalCost} only`));
+    finTaxAmt.appendChild(document.createTextNode(`₹${taxAmt}(3%)`));
     finTotalAmtWithTax.appendChild(document.createTextNode(`₹${totalCostWithTax} only`));
     showResults();
   }
