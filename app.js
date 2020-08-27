@@ -54,7 +54,7 @@ function calculateResults() {
   excCost = excPrice * excWeight;
   totalCost = parseFloat(finCost).toFixed(3);
   totalCostAfterExc = parseFloat(finCost).toFixed(3) - parseFloat(excCost).toFixed(3);
-  totalCostWithTax = totalCostAfterExc +  cost*(3/100);
+  totalCostWithTax = (totalCostAfterExc +  cost*(3/100)).toFixed(3);
 
   if (isNaN(totalCost) === true) {
     showError("Please Enter Correct Inputs");
