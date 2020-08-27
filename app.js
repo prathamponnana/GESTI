@@ -48,13 +48,13 @@ function calculateResults() {
   const netWeight = parseFloat(totalWeight).toFixed(3);
   poun = parseFloat(netWeight / 7.988).toFixed(3);
   cost = netWeight * currentPrice;
-  taxAmt = (cost *3)/100;
+  taxAmt = ((cost *3)/100).toFixed(3);
   costWithWastage = cost + cost * (wastage / 100.0);
   finCost = parseFloat(costWithWastage) + parseInt(deductionAmt) + parseInt(makingCharges) + parseInt(otherCharges);
   excCost = excPrice * excWeight;
   totalCost = parseFloat(finCost).toFixed(3);
   totalCostAfterExc = parseFloat(finCost).toFixed(3) - parseFloat(excCost).toFixed(3);
-  totalCostWithTax = (totalCostAfterExc +  cost*(3/100)).toFixed(3);
+  totalCostWithTax = (totalCostAfterExc + cost*(3/100)).toFixed(3);
 
   if (isNaN(totalCost) === true) {
     showError("Please Enter Correct Inputs");
